@@ -14,7 +14,7 @@ void FBullCowGame::Reset()
 {
 	constexpr int32 CURRENT_TRY = 1;
 	constexpr int32 MAX_TRY = 5;
-	const FString HIDDEN_WORD = "Ans";
+	const FString HIDDEN_WORD = "abcde";
 	HiddenWord = HIDDEN_WORD;
 	SetCurrentTry(CURRENT_TRY);
 	SetMaxTries(MAX_TRY);
@@ -53,7 +53,10 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 	{
 		return EGuessStatus::WRONG_LENGTH;
 	}
-	return EGuessStatus::OK;
+	else 
+	{
+		return EGuessStatus::OK;
+	}
 }
 
 void FBullCowGame::SetMaxTries(int32 iMaxTries)
